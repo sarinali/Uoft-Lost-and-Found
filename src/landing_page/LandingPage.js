@@ -1,8 +1,11 @@
 import "../css/landing.css";
+import React from "react";
 import styled from "styled-components";
 import ColourPalette, { Colours } from "../constants/ColourPalette.js"
-import { BrowserRouter, Route, Switch, Router } from 'react-router-dom';
+// import {useNavigate } from 'react-router-dom';
 import LogIn from "./LogIn";
+// import {BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Button = styled.button`
   background-color: ${(props) => Colours.white};
@@ -25,21 +28,15 @@ const Button = styled.button`
 `;
 
 function LandingPage() {
-    function navigateLogIn() {
-        // redirect user to new screen
-    }
+    // const navigate  = useNavigate();
+        // navigate("/login");
     return (
-        <div className="container">
+        <div className="container"> 
             <div className="header">
                 <div className="logo-container"></div>
-                <div className="sign-in-container">
-                    {/* <Router>
-                        <Switch>
-                            <Route exact path="/login" component={LogIn}></Route>
-                        </Switch>
-                        
-                    </Router> */}
-                </div>
+            </div>
+            <div>  
+                <Link to="/login"><button onclick="Login()">LogIn</button></Link>
             </div>
             <div className="tagline">
                 <div className="name">

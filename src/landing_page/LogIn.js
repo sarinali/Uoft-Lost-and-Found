@@ -1,6 +1,9 @@
 function LogIn() {
+    console.log("on login page")
     return(
-        <div></div>
+        <div>
+            log in page!
+        </div>
     )
 }
 
