@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { storage } from "../firebase/firebase-config.js";
 import { ref, getStorage, uploadBytes, listAll, getDownloadURL} from "firebase/storage";
 import {v4} from 'uuid'
-//import compress from 'browser-image-compression';
+
 
 async function ImageStorage() {
     const [imageUpload, setImageUpload] = useState(null);

@@ -4,7 +4,24 @@ import {db} from "../firebase/firebase-config.js";
 import {collection, getDocs} from "firebase/firestore";
 import {useEffect, useState} from 'react';
 import { auth } from "../firebase/firebase-config";
+//import compress from 'browser-image-compression';
 
+async function resizeImage(file) {
+    const Compress = require('compress.js')
+    const compress = new Compress()
+    const resizedImage = await compress.compress([file], {
+      size: 2, // the max size in MB, defaults to 2MB
+      quality: 1, // the quality of the image, max is 1,
+      maxWidth: 300, // the max width of the output image, defaults to 1920px
+      maxHeight: 300, // the max height of the output image, defaults to 1920px
+      resize: true // defaults to true, set false if you do not want to resize the image width and height
+    })
+    const img = resizedImage[0];
+    const base64str = img.data
+    const imgExt = img.ext
+    const resizedFiile = Compress.convertBase64ToFile(base64str, imgExt)
+    return resizedFiile;
+}
 
 function CreateListing() {
     const [postings, setPostings] = useState([]);
@@ -27,6 +44,7 @@ function CreateListing() {
     return (
         <div>
             {postings.map((postings) => {
+                
                 return (
                     <div>
                         {" "}
@@ -37,7 +55,8 @@ function CreateListing() {
                         <h1>Exact Location: {postings.exactLocation}</h1>
                         {postings.imageList.map((images) => {
                             return (
-                                <img src={images} alt=""></img>
+                                
+                                <img src={images} alt="" height = '500'/>
                             )
                         })}
                         
