@@ -5,6 +5,7 @@ import {db} from "../firebase/firebase-config.js";
 import { storage } from "../firebase/firebase-config.js";
 import { ref, uploadBytes, listAll, getDownloadURL} from "firebase/storage";
 import {v4} from 'uuid'
+import {userEmail} from '../landing_page/LogIn.js';
 
 
 function PostListing() {
@@ -20,6 +21,7 @@ function PostListing() {
 
     // TODO: fix the timestamp 
     const createPosting = async () => {
+        console.log(userEmail)
         // firebase.auth().currentUser.email
         await addDoc(postingsCollectionRef, {
             itemName: itemName, 
@@ -28,7 +30,8 @@ function PostListing() {
             date: date,
             caption: caption,
             timestamp: 2,
-            imageList: imageList, })
+            imageList: imageList, 
+            })
         setItemName("")
         setBuildlingName("")
         setExactLocation("")

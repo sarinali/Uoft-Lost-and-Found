@@ -5,6 +5,8 @@ import TextField, {HelperText, Input} from '@material/react-text-field';
 import { auth } from "../firebase/firebase-config";
 import { Navigate, Outlet } from "react-router-dom"
 
+var userEmail
+
 const userLog = {loginId : false};
 
 const useAuth = () => {
@@ -46,22 +48,21 @@ const LogIn = (props) => {
     }
 
     const login = async () => {
-        try {
-            const user = await signInWithEmailAndPassword(
-                auth,
-                username, 
-                password
-            )
-            // console.log(response)
-            userLog.loginId = true;
-        } catch(error) {
-            console.log("error")
-        }
+      
+        const user = await signInWithEmailAndPassword(
+            auth,
+            username, 
+            password
+        )
+        userEmail = username
+        userLog.loginId = true;
+        
     }
 
     const logout = async () => {
         userLog.loginId = false;
         await signOut(auth);
+        console.log("hello")
     }
 
     return(
@@ -111,4 +112,4 @@ const ProtectedRoutes = () => {
     return useAuth() ? <Outlet /> : <Navigate to="/"/>;
 }
 
-export {ProtectedRoutes, LogIn};
+export {ProtectedRoutes, LogIn, userEmail};

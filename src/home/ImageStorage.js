@@ -41,6 +41,4 @@ async function ImageStorage() {
     );
 }
 
-
-
 export default ImageStorage;

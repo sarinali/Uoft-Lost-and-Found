@@ -1,11 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom'
-import LandingPage from "../../landing_page/LandingPage";
-import { ProtectedRoutes, LogIn } from "../../landing_page/LogIn";
-import CreateListing from "../../home/CreateListing";
-import Home from "../../home/Home";
-import PostListing from "../../home/PostListing";
-import MyProfile from "../../home/MyProfile";
+import { NavLink, Link } from 'react-router-dom';
 import {ReactComponent as LogoB} from "../../Images/LogoBig.svg"
 import {ReactComponent as LogoS} from "../../Images/LogoSmall.svg"
 import './header.css';
