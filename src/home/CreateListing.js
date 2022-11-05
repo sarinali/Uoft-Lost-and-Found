@@ -3,6 +3,8 @@ import React from "react";
 import {db} from "../firebase/firebase-config.js";
 import {collection, getDocs} from "firebase/firestore";
 import {useEffect, useState} from 'react';
+import { auth } from "../firebase/firebase-config";
+
 
 function CreateListing() {
     const [postings, setPostings] = useState([]);

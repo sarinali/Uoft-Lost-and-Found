@@ -1,10 +1,11 @@
 import "../App.css"
 import { useState, useEffect } from "react";
 import { storage } from "../firebase/firebase-config.js";
-import { ref, uploadBytes, listAll, getDownloadURL} from "firebase/storage";
+import { ref, getStorage, uploadBytes, listAll, getDownloadURL} from "firebase/storage";
 import {v4} from 'uuid'
+//import compress from 'browser-image-compression';
 
-function ImageStorage() {
+async function ImageStorage() {
     const [imageUpload, setImageUpload] = useState(null);
     const [imageList, setImageList] = useState([]);
 
@@ -23,14 +24,6 @@ function ImageStorage() {
         });
     };
 
-    const resizeFile = file =>
-        new Promise(resolve => {
-            ResizeObserver.imageFileResizer(file, 500, 500, "JPEG", 25, 0, uri => {
-                resolve(uri);
-            });
-        });
-
-
     useEffect(() => {
         listAll(imageListRef).then((response) => {
             response.items.forEach((item) => {
@@ -47,5 +40,7 @@ function ImageStorage() {
         </div>
     );
 }
+
+
 
 export default ImageStorage;

@@ -2,7 +2,6 @@
 import React, { useState } from "react"
 import {onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
 import TextField, {HelperText, Input} from '@material/react-text-field';
-import {Link} from 'react-router-dom';
 import { auth } from "../firebase/firebase-config";
 import { Navigate, Outlet } from "react-router-dom"
 
@@ -47,7 +46,6 @@ const LogIn = (props) => {
     }
 
     const login = async () => {
-        console.log("running")
         try {
             const user = await signInWithEmailAndPassword(
                 auth,

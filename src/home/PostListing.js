@@ -7,7 +7,6 @@ import { ref, uploadBytes, listAll, getDownloadURL} from "firebase/storage";
 import {v4} from 'uuid'
 
 
-
 function PostListing() {
     const [itemName, setItemName] = useState("")
     const [buildlingName, setBuildlingName] = useState("")
@@ -21,6 +20,7 @@ function PostListing() {
 
     // TODO: fix the timestamp 
     const createPosting = async () => {
+        // firebase.auth().currentUser.email
         await addDoc(postingsCollectionRef, {
             itemName: itemName, 
             building: buildlingName,
@@ -28,7 +28,7 @@ function PostListing() {
             date: date,
             caption: caption,
             timestamp: 2,
-            imageList: imageList })
+            imageList: imageList, })
         setItemName("")
         setBuildlingName("")
         setExactLocation("")
@@ -43,6 +43,7 @@ function PostListing() {
         alignItems: 'center',
     }
     
+
     // const imageListRef = ref(storage, "images/")
 
     const uploadImage  = () => {
