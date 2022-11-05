@@ -1,8 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import LandingPage from './landing_page/LandingPage';
-// import {BrowserRouter, Route, Router, Routes } from 'react-router-dom';
-// import LogIn from "./landing_page/LogIn";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,15 +6,18 @@ import {
 } from "react-router-dom";
 import LandingPage from "./landing_page/LandingPage";
 import { ProtectedRoutes, LogIn } from "./landing_page/LogIn";
-import CreateListing from "./home/CreateListing"
-import Home from "./home/Home"
-import PostListing from "./home/PostListing"
-import MyProfile from "./home/MyProfile"
+import CreateListing from "./home/CreateListing";
+import Home from "./home/Home";
+import PostListing from "./home/PostListing";
+import MyProfile from "./home/MyProfile";
+// import Navbar from "./Navbar";
 
 // const userLog = {loggedIn: false};
 
 function App() {
   return (
+    <>
+    {/* <Navbar /> */}
     <Router>
       <nav>
         <Link to="/home"> Home </Link>
@@ -38,6 +36,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
+    </>
   );
 }
 

@@ -12,7 +12,24 @@ const useAuth = () => {
     return userLog.loginId;
  };
 
-// function LogIn(props) {
+function logInMessage(flag) {
+    if (flag){
+        return (
+            <div>
+                <p>Logged In</p>
+                <Outlet /> : <Navigate to="/home"/>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <p>Not Logged In</p>
+            </div>
+        )
+    }
+}
+
+
 const LogIn = (props) => {
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
@@ -75,17 +92,19 @@ const LogIn = (props) => {
                 </TextField>
             </div>
 
-            <div style={center}>  
-                <Link to="/home">
-                    <button onClick={login}>Submit</button>
-                    </Link>
+            <div style={center}> 
+                <button onClick={login}>Submit</button>
             </div>
 
-            <div>
-                {useAuth() ? console.log("User Signed In") : console.log("User Not Signed In")}
-            </div>          
-            <p>{user?.email}</p> 
-            <button onClick={logout}>Sign Out</button>
+            <div style={center}>
+                <p>{logInMessage(userLog.loginId)}</p>            
+            </div>
+            <div style={center}>
+            <p>{user?.email}</p>
+                      
+                <button onClick={logout}>Sign Out</button>
+
+            </div> 
         </div>
     )
 }

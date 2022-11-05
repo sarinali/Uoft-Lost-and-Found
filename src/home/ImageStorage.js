@@ -15,11 +15,22 @@ function ImageStorage() {
         const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
         uploadBytes(imageRef, imageUpload).then((snapshot) => {
             getDownloadURL(snapshot.ref).then((url) => {
+                var urlName = url;
+                console.log(urlName)
                 setImageList((prev) => [...prev, url]);
             })
             
         });
     };
+
+    const resizeFile = file =>
+        new Promise(resolve => {
+            ResizeObserver.imageFileResizer(file, 500, 500, "JPEG", 25, 0, uri => {
+                resolve(uri);
+            });
+        });
+
+
     useEffect(() => {
         listAll(imageListRef).then((response) => {
             response.items.forEach((item) => {
@@ -32,11 +43,7 @@ function ImageStorage() {
     }, []);
     return (
     <div className= "App">
-        <input type = "file" onChange={(event) => {setImageUpload(event.target.files[0])}}/> 
-        <button onClick={uploadImage}> Upload Image</button>
-            {imageList.map((url) => {
-                return <img src={url} />;
-            })}
+        
         </div>
     );
 }

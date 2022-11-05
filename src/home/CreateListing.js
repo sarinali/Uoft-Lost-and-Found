@@ -32,10 +32,17 @@ function CreateListing() {
                         <h1>Caption: {postings.caption}</h1>
                         <h1>Date: {postings.date}</h1>
                         <h1>Building: {postings.building}</h1>
-                        <h1>Exact Location: {postings.exactLocation}</h1>  
+                        <h1>Exact Location: {postings.exactLocation}</h1>
+                        {postings.imageList.map((images) => {
+                            return (
+                                <img src={images} alt=""></img>
+                            )
+                        })}
+                        
                     </div>
                 );
             })}
+            
         </div>
     )
 }

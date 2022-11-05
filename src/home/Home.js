@@ -15,7 +15,8 @@ function Home() {
     // }
 
     return (
-        ImageStorage()
+        <p>Welcome to the Home Page</p>
+        // ImageStorage()
     )
 }
 
