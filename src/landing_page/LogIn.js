@@ -37,6 +37,7 @@ const LogIn = (props) => {
                 username, 
                 password
             )
+            // console.log(response)
             userLog.loginId = true;
         } catch(error) {
             console.log("error")
@@ -79,8 +80,11 @@ const LogIn = (props) => {
                     <button onClick={login}>Submit</button>
                     </Link>
             </div>
-            <p>user signed in</p>
-            <p>{user?.email}</p>
+
+            <div>
+                {useAuth() ? console.log("User Signed In") : console.log("User Not Signed In")}
+            </div>          
+            <p>{user?.email}</p> 
             <button onClick={logout}>Sign Out</button>
         </div>
     )

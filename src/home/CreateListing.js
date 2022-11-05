@@ -14,7 +14,7 @@ function CreateListing() {
             setPostings(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
         };
         getPostings();
-    }, []);
+    }, [postingsCollectionRef]);
     // const getData = async () => {
     //     const snapshot = await collection('users').get();
     //     snapshot.forEach((doc) => {
@@ -29,7 +29,7 @@ function CreateListing() {
                     <div>
                         {" "}
                         <h1>Item Name: {postings.itemName}</h1>
-                         <h1>Caption: {postings.caption}</h1>
+                        <h1>Caption: {postings.caption}</h1>
                         <h1>Date: {postings.date}</h1>
                         <h1>Building: {postings.building}</h1>
                         <h1>Exact Location: {postings.exactLocation}</h1>  
