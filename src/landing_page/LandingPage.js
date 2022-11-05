@@ -28,8 +28,6 @@ const Button = styled.button`
 `;
 
 function LandingPage() {
-    // const navigate  = useNavigate();
-        // navigate("/login");
     return (
         <div className="container"> 
             <div className="header">
