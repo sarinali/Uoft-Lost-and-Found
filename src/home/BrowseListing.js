@@ -30,19 +30,21 @@ function BrowseListing() {
                         <h1>Date: {postings.date}</h1>
                         <h1>Building: {postings.building}</h1>
                         <h1>Exact Location: {postings.exactLocation}</h1>
-                        <Carousel>
-                            {postings.imageList.map((images) => {
-                                console.log(images)
-                                return (
-                                    <Carousel.Item>
-                                        <img src={images} alt="" height = '500'/>
-                                    </Carousel.Item>
-                                
+                        <div style={{width: 200}}>
+                            <Carousel>
+                                {postings.imageList.map((images) => {
+                                    console.log(images)
+                                    return (
+                                        <Carousel.Item>
+                                            <img src={images} alt="" height = '500'/>
+                                        </Carousel.Item>
                                     
-                                );
+                                        
+                                    );
 
-                            })}
-                        </Carousel>
+                                })}
+                            </Carousel>
+                        </div>
                         
                         
                     </div>
