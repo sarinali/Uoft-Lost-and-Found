@@ -5,8 +5,25 @@ import {collection, getDocs} from "firebase/firestore";
 import {useEffect, useState} from 'react';
 import { auth } from "../firebase/firebase-config";
 import { Carousel } from "react-bootstrap";
+import "../css/loggedin.css"
+import Button from 'react-bootstrap/Button';
+import {userEmail} from "../landing_page/LogIn";
+import { Link } from "react-router-dom";
 
 function BrowseListing() {
+    // function contactFinder() {
+    //     return (
+    //         <Link
+    //             to='#'
+    //             onClick={(e) => {
+    //                 window.location.href = userEmail;
+    //                 e.preventDefault();
+    //             }}
+    //         >
+    //             {/* {label} */}
+    //         </Link>
+    //     );
+    // }
     const [postings, setPostings] = useState([]);
     const postingsCollectionRef = collection(db, "postings");
 
@@ -19,32 +36,37 @@ function BrowseListing() {
     }, [postingsCollectionRef]);
 
     return (
-        <div>
+        <div className="posting-grid">
             {postings.map((postings) => {
-                
                 return (
-                    <div>
+                    <div className="posting-container">
                         {" "}
-                        <h1>Item Name: {postings.itemName}</h1>
-                        <h1>Caption: {postings.caption}</h1>
-                        <h1>Date: {postings.date}</h1>
-                        <h1>Building: {postings.building}</h1>
-                        <h1>Exact Location: {postings.exactLocation}</h1>
-                        <div style={{width: 200}}>
+                        <div style={{width: 375}}>
+
                             <Carousel>
                                 {postings.imageList.map((images) => {
-                                    console.log(images)
                                     return (
                                         <Carousel.Item>
                                             <img src={images} alt="" height = '500'/>
                                         </Carousel.Item>
-                                    
-                                        
                                     );
 
                                 })}
                             </Carousel>
                         </div>
+
+                        <div className="posting-information">
+                            <div className="item-name">{postings.itemName}</div>
+                            <div className="lost-date">Found on {postings.date}</div>
+                            <div className="building">Found at {postings.building}</div>
+                            <div className="exact-location">at {postings.exactLocation}</div>
+                            <div className="caption">{postings.caption}</div>
+                            <Button variant="primary" className="contact-button">
+                                <a href={"mailto:" + postings.userEmail} className="contact-text">Contact Finder</a>
+                            </Button>{' '}
+                        </div>
+
+                        
                         
                         
                     </div>

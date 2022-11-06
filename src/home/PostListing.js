@@ -31,6 +31,7 @@ function PostListing() {
             caption: caption,
             timestamp: 2,
             imageList: imageList, 
+            userEmail: userEmail
             })
         setItemName("")
         setBuildlingName("")
@@ -73,8 +74,10 @@ function PostListing() {
     return (
         <div>
             <head> <link rel="UFound" type="x-icon" href="UFound logo (2).PNG"></link></head>
-            <h1>Post Listing</h1>
-\
+            <div style={center}>
+                <h1>Post Listing</h1>
+            </div>
+
             <div style={center}>Item Name</div>
 
             <div style={center}>
@@ -115,9 +118,18 @@ function PostListing() {
                 </TextField>
             </div>
 
-            <button onClick={createPosting}>submit</button>
-            <input type = "file" onChange={(event) => {setImageUpload(event.target.files[0])}}/> 
-        <button onClick={uploadImage}> Upload Image</button>
+
+            <div style={center}>
+                <input type = "file" onChange={(event) => {setImageUpload(event.target.files[0])}}/> 
+                <button onClick={uploadImage}> Upload Image</button>
+            </div>
+
+
+
+
+            <div style={center}>
+                <button onClick={createPosting}>submit</button>
+            </div>
             {imageList.map((url) => {
                 console.log("running")
                 return <img src={url} />;

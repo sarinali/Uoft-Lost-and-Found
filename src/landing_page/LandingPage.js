@@ -7,7 +7,7 @@ import LogIn from "./LogIn";
 // import {BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
-const Button = styled.button`
+ styled.button`
   background-color: ${(props) => Colours.white};
   color: white;
   padding: 5px 15px;

@@ -1,7 +1,9 @@
 nav {
-    height: 100px;
+    height: 110px;
     border: 1px solid #dfdfdf;
-    margin-left: -150px;
+    margin-left: -120px;
+    margin-top: -10px;
+    margin-right: -30px;
 }
 
 .div-header {
@@ -14,13 +16,23 @@ nav {
 }
 
 .header-button {
-    background-color: #1E3765; /* Blue */
+    position:relative;
+    background-color: white;
     border: 1px;
-    color: white;
-    padding: 25px 75px;
+    color: #1E3765;
+    margin-left: 30px;
+    margin-top: 10px;
+    padding: 1px 70px;
     border-radius: 8px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 25px;
+}
+
+.logo{
+    position: relative;
+    height: 80px;
+    margin-top: 25px;
+
 }

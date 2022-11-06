@@ -1,22 +1,17 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import './header.css';
-import logo from "../../Images/LogoSmall.svg"
-import { LogIn } from "../../landing_page/LogIn"
-
-
-
+import logo from '../../Images/Logo (1).svg';
 
 const Header = () =>{
     return(
         <nav>
             <div className='div-header'>
-                <img src= {logo} alt="logo" width='110' height='110'/>
+                <img className="logo" src= {logo} alt="logo"/>
                 <div style = {{display:"flex",flexDirection:"row"}}>
-                    <NavLink to="/home"><button className='header-button'>Home</button> </NavLink>
-                    <NavLink to="/my_profile"><button className='header-button'>My Profile</button></NavLink>
-                    <NavLink to="/post_listing"> <button className='header-button'>Post Listing</button></NavLink>
-                    <NavLink to="/create_listing"> <button className='header-button'>Browse Listing</button></NavLink>
+                    <NavLink to="/home"><button className="header-button"><b>Home</b></button></NavLink>
+                    <NavLink to="/my_listings"><button className="header-button"><b>My Listings</b></button></NavLink>
+                    <NavLink to="/post_listing"><button className="header-button"><b>Post Listing</b></button></NavLink>
                 </div>
             </div>
         </nav>

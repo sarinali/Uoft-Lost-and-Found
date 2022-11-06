@@ -17,6 +17,7 @@ function MyProfile() {
     return (
         <div>
             {postings.map((postings) => {
+                console.log(postings.userEmail)
                 if (postings.userEmail === userEmail) {
                     return (
                         

@@ -20,10 +20,9 @@ function App() {
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/login" element={<LogIn />} />
         <Route element={<ProtectedRoutes />}>
-          <Route exact path="/my_profile" element={<MyProfile />} />
+          <Route exact path="/my_listings" element={<MyProfile />} />
           <Route exact path="/post_listing" element={<PostListing />} />
-          <Route exact path="/home" element={<Home />} />
-          <Route exact path="/create_listing" element={<BrowseListing />} />
+          <Route exact path="/home" element={<BrowseListing />} />
         </Route>
       </Routes>
     </Router>
