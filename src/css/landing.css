@@ -80,6 +80,18 @@ html, body {
     height: 40vh;
 }
 
+.gap {
+    height: 5vh;
+}
+
+.small-gap {
+    height: 2vh;
+}
+
+.mid-gap {
+    height: 10vh;
+}
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -90,4 +102,40 @@ html, body {
 
 .spacer-login {
     height: 40vh;
+}
+
+/* .submit-button {
+    margin-top: 20px;
+} */
+
+.password-field {
+    border-radius: 25px;
+    width: 300px;
+}
+
+.username-field {
+    border-radius: 25px;
+    width: 300px;
+}
+
+.posting-listing-text {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.item-name-field {
+    border-radius: 25px;
+    width: 300px;
+}
+
+.building-name-field {
+    /* margin-top: 20px; */
+    border-radius: 25px;
+    width: 300px;
+}
+
+.caption-field {
+    border-radius: 15px;
+    height: 60px;
+    width: 300px;
 }

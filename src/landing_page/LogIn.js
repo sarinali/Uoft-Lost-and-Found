@@ -68,32 +68,46 @@ const LogIn = (props) => {
 
                 
             </div>
-
+            
+            <div className="small-gap"></div>
+            
             <div style={center}>UTORID</div>
 
             <div className="utorid-field" style={center}>
-                <TextField helperText={<HelperText></HelperText>} variant="outlined">
+                {/* <TextField helperText={<HelperText></HelperText>} variant="outlined">
                     <Input value={username} onChange={e=>setUserName(e.target.value)}/>
-                </TextField>
+                </TextField> */}
+                <form value={username} onChange={e=>setUserName(e.target.value)}>
+                    <input type="text" className="username-field" />
+                </form>
             </div>
+
+            <div className="small-gap"></div>
 
             <div style={center}>Password</div>
             
             <div style={center}>
-                <TextField helperText={<HelperText></HelperText>}>
+                {/* <TextField helperText={<HelperText></HelperText>} className="username-field">
                     <Input value={password} onChange={e=>setPassword(e.target.value)}/>
-                </TextField>
+                </TextField> */}
+                <form value={password} onChange={e=>setPassword(e.target.value)}>
+                    <input type="password" className="password-field" />
+                </form>
             </div>
 
+            <div className="gap"></div>
+
             <div style={center}> 
-                <button onClick={login}>Submit</button>
+                {/* <button onClick={login}>Submit</button> */}
+                <button class="btn btn-primary" type="submit" onClick={login}>Submit</button>
             </div>
 
             <div style={center}>
                 <p>{logInMessage(userLog.loginId)}</p>            
             </div>
             <div style={center}>                      
-                <button onClick={logout}>Sign Out</button>
+                {/* <button onClick={logout}>Sign Out</button> */}
+                {/* <button class="btn btn-primary" type="submit" onClick={logout}>Log Out</button> */}
 
             </div> 
             <div className="spacer-login"></div>

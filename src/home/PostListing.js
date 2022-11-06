@@ -6,6 +6,7 @@ import { storage } from "../firebase/firebase-config.js";
 import { ref, uploadBytes, listAll, getDownloadURL} from "firebase/storage";
 import {v4} from 'uuid'
 import {userEmail} from '../landing_page/LogIn.js';
+import "../css/loggedin.css"
 
 
 function PostListing() {
@@ -75,63 +76,79 @@ function PostListing() {
         <div>
             <head> <link rel="UFound" type="x-icon" href="UFound logo (2).PNG"></link></head>
             <div style={center}>
-                <h1>Post Listing</h1>
+                <div className='posting-listing-text'>Post Listing</div>
             </div>
 
             <div style={center}>Item Name</div>
 
             <div style={center}>
-                <TextField helperText={<HelperText></HelperText>} variant="outlined">
+                {/* <TextField helperText={<HelperText></HelperText>} variant="outlined">
                         <Input value={itemName} onChange={e=>setItemName(e.target.value)}/>
-                </TextField>
+                </TextField> */}
+                <form value={itemName} onChange={e=>setItemName(e.target.value)}>
+                    <input type="text" className="item-name-field" />
+                </form>
             </div>
-
+            <div className='small-gap'></div>
             <div style={center}>Building Name</div>
 
             <div style={center}>
-                <TextField helperText={<HelperText></HelperText>} variant="outlined">
+                {/* <TextField helperText={<HelperText></HelperText>} variant="outlined">
                     <Input value={buildlingName} onChange={e=>setBuildlingName(e.target.value)}/>
-                </TextField>
+                </TextField> */}
+                <form value={buildlingName} onChange={e=>setBuildlingName(e.target.value)}>
+                    <input type="text" className="building-name-field" />
+                </form>
             </div>
-
+            <div className='small-gap'></div>
             <div style={center}>Exact Location</div>
 
             <div style={center}>
-                <TextField helperText={<HelperText></HelperText>} variant="outlined">
+                {/* <TextField helperText={<HelperText></HelperText>} variant="outlined">
                     <Input value={exactLocation} onChange={e=>setExactLocation(e.target.value)}/>
-                </TextField>
+                </TextField> */}
+                <form value={exactLocation} onChange={e=>setExactLocation(e.target.value)}>
+                    <input type="text" className="building-name-field" />
+                </form>
             </div>
-
+            <div className='small-gap'></div>
             <div style={center}>Date Found</div>
 
             <div style={center}>
-                <TextField helperText={<HelperText></HelperText>} variant="outlined">
+                {/* <TextField helperText={<HelperText></HelperText>} variant="outlined">
                     <Input value={date} onChange={e=>setDate(e.target.value)}/>
-                </TextField>
+                </TextField> */}
+                <form value={exactLocation} onChange={e=>setExactLocation(e.target.value)}>
+                    <input type="text" className="building-name-field" />
+                </form>
             </div>
-
+            <div className='small-gap'></div>
             <div style={center}>Caption</div>
 
             <div style={center}>
-                <TextField helperText={<HelperText></HelperText>} variant="outlined">
+                {/* <TextField helperText={<HelperText></HelperText>} variant="outlined">
                     <Input value={caption} onChange={e=>setCaption(e.target.value)}/>
-                </TextField>
+                </TextField> */}
+                <form value={exactLocation} onChange={e=>setExactLocation(e.target.value)}>
+                    <textarea rows="2" type="text" className="caption-field" />
+                </form>
             </div>
 
 
             <div style={center}>
                 <input type = "file" onChange={(event) => {setImageUpload(event.target.files[0])}}/> 
-                <button onClick={uploadImage}> Upload Image</button>
+                {/* <button onClick={uploadImage}> Upload Image</button> */}
+                <button class="btn btn-primary" type="submit" onClick={uploadImage}>Upload Image</button>
             </div>
 
 
-
+                
 
             <div style={center}>
-                <button onClick={createPosting}>submit</button>
+                {/* <button onClick={createPosting}>submit</button> */}
+                <button class="btn btn-primary" type="submit" onClick={createPosting}>Submit</button>
             </div>
             {imageList.map((url) => {
-                console.log("running")
                 return <img src={url} />;
             })}
         </div>
