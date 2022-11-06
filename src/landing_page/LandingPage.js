@@ -6,26 +6,7 @@ import ColourPalette, { Colours } from "../constants/ColourPalette.js"
 import LogIn from "./LogIn";
 // import {BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {Link} from 'react-router-dom';
-
- styled.button`
-  background-color: ${(props) => Colours.white};
-  color: white;
-  padding: 5px 15px;
-  border-radius: 5px;
-  outline: 0;
-  text-transform: uppercase;
-  margin: 10px 0px;
-  cursor: pointer;
-  box-shadow: 0px 2px 2px lightgray;
-  transition: ease background-color 250ms;
-  &:hover {
-    background-color: ${(props) => Colours.dark_blue};
-  }
-  &:disabled {
-    cursor: default;
-    opacity: 0.7;
-  }
-`;
+import './LandingPage.css';
 
 function LandingPage() {
     return (
@@ -33,7 +14,7 @@ function LandingPage() {
             <div className="header">
             </div>
             <div>  
-                <Link to="/login"><button onclick="Login()">LogIn</button></Link>
+                <Link to="/login"><button className="login-button" onclick="Login()">LogIn</button></Link>
             </div>
             <div className="tagline">
                 <div className="name">

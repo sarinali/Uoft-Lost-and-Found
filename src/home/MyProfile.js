@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 import {db} from "../firebase/firebase-config.js";
 import {collection, getDocs} from "firebase/firestore";
-import {userEmail} from "../landing_page/LogIn.js"
+import {userEmail} from "../landing_page/LogIn.js";
+import { Carousel } from "react-bootstrap"
+
 
 function MyProfile() {
     const [postings, setPostings] = useState([]);
@@ -20,23 +22,36 @@ function MyProfile() {
                 console.log(postings.userEmail)
                 if (postings.userEmail === userEmail) {
                     return (
-                        
-                        <div>
+                        <div className="posting-container">
                             {" "}
-                            <h1>Item Name: {postings.itemName}</h1>
-                            <h1>Caption: {postings.caption}</h1>
-                            <h1>Date: {postings.date}</h1>
-                            <h1>Building: {postings.building}</h1>
-                            <h1>Exact Location: {postings.exactLocation}</h1>
-                            {postings.imageList.map((images) => {
-                                return (
-                                    <img src={images} alt="" height = '500'/>
-                                )
-                            })}
+                            <div style={{width: 375}}>
+    
+                                <Carousel>
+                                    {postings.imageList.map((images) => {
+                                        return (
+                                            <Carousel.Item>
+                                                <img src={images} alt="" height = '500'/>
+                                            </Carousel.Item>
+                                        );
+    
+                                    })}
+                                </Carousel>
+                            </div>
+    
+                            <div className="posting-information">
+                                <div className="item-name">{postings.itemName}</div>
+                                <div className="lost-date">Found on {postings.date}</div>
+                                <div className="building">Found at {postings.building}</div>
+                                <div className="exact-location">at {postings.exactLocation}</div>
+                                <div className="caption">{postings.caption}</div>
+
+                            </div>
+    
+                            
+                            
                             
                         </div>
                     );
-
                 } else {
                     return <div></div>
                 }

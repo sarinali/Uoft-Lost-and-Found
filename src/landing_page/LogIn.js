@@ -21,13 +21,7 @@ function logInMessage(flag) {
                 <Outlet /> : <Navigate to="/home"/>
             </div>
         )
-    } else {
-        return (
-            <div>
-                <p>Not Logged In</p>
-            </div>
-        )
-    }
+    } 
 }
 
 
