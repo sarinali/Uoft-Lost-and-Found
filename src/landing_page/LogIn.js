@@ -98,12 +98,11 @@ const LogIn = (props) => {
             <div style={center}>
                 <p>{logInMessage(userLog.loginId)}</p>            
             </div>
-            <div style={center}>
-            <p>{user?.email}</p>
-                      
+            <div style={center}>                      
                 <button onClick={logout}>Sign Out</button>
 
             </div> 
+            <div className="spacer-login"></div>
         </div>
     )
 }

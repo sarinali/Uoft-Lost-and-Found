@@ -6,17 +6,17 @@ import { LogIn } from "../../landing_page/LogIn"
 
 
 
+
 const Header = () =>{
     return(
         <nav>
             <div className='div-header'>
                 <img src= {logo} alt="logo" width='110' height='110'/>
                 <div style = {{display:"flex",flexDirection:"row"}}>
-                    <NavLink to="/home"> Home </NavLink>
-                    <NavLink to="/my_profile"> My Profile </NavLink>
-                    <NavLink to="/post_listing"> Post Listing</NavLink>
-                    <NavLink to="/create_listing"> Create Listing</NavLink>
-                    <NavLink to="/login"> <button className='button-header'>LogOut</button> </NavLink>
+                    <NavLink to="/home"><button className='header-button'>Home</button> </NavLink>
+                    <NavLink to="/my_profile"><button className='header-button'>My Profile</button></NavLink>
+                    <NavLink to="/post_listing"> <button className='header-button'>Post Listing</button></NavLink>
+                    <NavLink to="/create_listing"> <button className='header-button'>Browse Listing</button></NavLink>
                 </div>
             </div>
         </nav>

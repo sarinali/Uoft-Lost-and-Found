@@ -72,6 +72,7 @@ function PostListing() {
     // }, []);
     return (
         <div>
+            <head> <link rel="UFound" type="x-icon" href="UFound logo (2).PNG"></link></head>
             <h1>Post Listing</h1>
 \
             <div style={center}>Item Name</div>

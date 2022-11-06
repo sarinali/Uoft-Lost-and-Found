@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import LandingPage from "./landing_page/LandingPage";
 import { ProtectedRoutes, LogIn } from "./landing_page/LogIn";
-import CreateListing from "./home/CreateListing";
+import BrowseListing from "./home/BrowseListing";
 import Home from "./home/Home";
 import PostListing from "./home/PostListing";
 import MyProfile from "./home/MyProfile";
@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/my_profile" element={<MyProfile />} />
           <Route exact path="/post_listing" element={<PostListing />} />
           <Route exact path="/home" element={<Home />} />
-          <Route exact path="/create_listing" element={<CreateListing />} />
+          <Route exact path="/create_listing" element={<BrowseListing />} />
         </Route>
       </Routes>
     </Router>

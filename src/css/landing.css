@@ -2,14 +2,16 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body {
+html, body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 
 .container {
     display: block;
+    height: 100vh;
+    background-image: url("../Images/background5.png");
 }
 
 .header {
@@ -38,7 +40,7 @@ body {
 }
 
 .slogan {
-    font-size: 2vw;
+    font-size: 2.3vw;
 }
 
 .login-container {
@@ -53,15 +55,39 @@ body {
 .sign-in-container{
     /* height: 30%; */
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.75em;
 }
 
 .login-body {
     display: block;
+    height: 100%;
+    background-image: url("../Images/loginbackground1.jpeg")
 }
 
 .utorid-field {
     display: flex;
     align-items: center;
     justify-content: start;
+    /* height: 100vh; */
+}
+
+.description {
+    padding: 2em;
+    padding-right: 30vw;
+}
+
+.spacer {
+    height: 40vh;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1E3765;
+    color: white;
+    height: 50px;
+}
+
+.spacer-login {
+    height: 40vh;
 }
